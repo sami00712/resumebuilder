@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Landing Page -->
+    <section id="landingPage">
+      <h1>Created by Muhammad Sami (Resume Builder)</h1>
+      <button id="startButton">Start Building Your Resume</button>
+    </section>
+
+    <!-- Form Page -->
+    <section id="formPage" style="display: none;">
+      <h2>Resume Details</h2>
+      <form id="resumeForm">
+
+        <!-- Profile Picture Upload and Preview -->
+        <div class="form-group">
+          <label for="photo">Profile Picture:</label>
+          <input type="file" id="photo" accept="image/*">
+          <img id="photoPreview" src="#" alt="Profile Picture Preview" style="display: none;">
+        </div>
+
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <!-- Profile Description -->
+        <div class="form-group">
+          <label for="profileDescription">Profile Description:</label>
+          <textarea id="profileDescription" placeholder="Write a brief profile description"></textarea>
+        </div>
+
+        <!-- Contact Details (Email, Phone, Location) -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter your email">
+
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" placeholder="Enter your phone number">
+
+          <label for="location">Location:</label>
+          <input type="text" id="location" placeholder="Enter your location">
+        </div>
+
+        <!-- Skills with Dynamic Add Skill Option -->
+        <div class="form-group">
+          <label>Skills:</label>
+          <div id="skillsList"></div>
+          <button type="button" id="addSkillButton">Add Skill</button>
+        </div>
+
+        <!-- Education Section -->
+        <div class="form-group">
+          <label>Education:</label>
+          <div class="education-entry">
+            <input type="text" placeholder="Institution Name" class="education-input">
+            <input type="text" placeholder="Degree" class="education-input">
+            <input type="date" placeholder="Start Date" class="education-input">
+            <input type="date" placeholder="End Date" class="education-input">
+          </div>
+          <button type="button" id="addEducationButton">Add Education</button>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="form-group">
+          <label>Experience:</label>
+          <div class="experience-entry">
+            <input type="text" placeholder="Company Name" class="experience-input">
+            <input type="text" placeholder="Job Title" class="experience-input">
+            <input type="date" placeholder="Start Date" class="experience-input">
+            <input type="date" placeholder="End Date" class="experience-input">
+            <textarea placeholder="Job Responsibilities" class="experience-input"></textarea>
+          </div>
+          <button type="button" id="addExperienceButton">Add Experience</button>
+        </div>
+
+        <!-- Language Field with Add Language Option -->
+        <div class="form-group">
+          <label>Languages:</label>
+          <div id="languagesList"></div>
+          <button type="button" id="addLanguageButton">Add Language</button>
+        </div>
+
+        <!-- Generate Resume Button -->
+        <button type="button" id="generateResumeButton">Generate Resume</button>
+      </form>
+    </section>
+
+    <!-- Resume Preview Section (Next Page) -->
+    <section id="resumePreviewPage" style="display: none;">
+      <div id="resumePreview">
+        <div id="leftSide">
+          <img id="resumePhoto" src="#" alt="Profile Picture" style="display: none;">
+          <h2 id="resumeName"></h2>
+          <p id="resumeProfileDescription"></p>
+          <p><i class="fas fa-envelope"></i> <span id="resumeEmail"></span></p>
+          <p><i class="fas fa-phone"></i> <span id="resumePhone"></span></p>
+          <p><i class="fas fa-map-marker-alt"></i> <span id="resumeLocation"></span></p>
+        </div>
+        <div id="rightSide">
+          <h3>Skills</h3>
+          <div id="resumeSkills"></div>
+
+          <h3>Education</h3>
+          <div id="resumeEducation"></div>
+
+          <h3>Experience</h3>
+          <div id="resumeExperience"></div>
+
+          <h3>Languages</h3>
+          <div id="resumeLanguages"></div>
+        </div>
+      </div>
+      <button id="downloadResumeButton">Download Resume</button>
+    </section>
+  </div>
+
+  <script src="index.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</body>
+</html> 
